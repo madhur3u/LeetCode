@@ -1,13 +1,15 @@
 # https://leetcode.com/problems/cyclically-rotating-a-grid/
 
+# acc to constrains, there will always be a shell
+
 class Solution:
     def rotateGrid(self, grid: List[List[int]], k: int) -> List[List[int]]:
         
         n = len(grid)
         m = len(grid[0])
         
-        for shell in range(1, min(n,m)//2 + 1):		
-            rotateShell(grid, shell, n, m, k)
+        for shell in range(1, min(n,m)//2 + 1):		# no. of shells in a grid will be min(n,m)//2
+            rotateShell(grid, shell, n, m, k)       # rotating each shell
         
         return grid
         
